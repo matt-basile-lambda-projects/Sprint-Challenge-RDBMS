@@ -6,6 +6,27 @@ const db = knex(knexConfig.development);
 const server = express();
 server.use(express.json());
 
+server.get('/projects/:id', async (req, res) =>{
+    try {
+    const project = await db('projects').where({id: req.params.id});
+    const actions = await db('actions', 'projects.id', '=', 'actions.project_id')
+    const answer = {
+        ...project[0],
+        actions
+    }
+
+     res.status(200).json(answer)
+    } catch (error) {
+        res.status(500).json(error)
+    }
+})
+
+
+
+
+
+
+
 
 server.post('/projects', async (req, res) => {
     try{
