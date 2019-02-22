@@ -27,3 +27,6 @@ server.post('/actions', async (req, res) => {
      res.status(500).json(error);
     }
 });
+
+const port = process.env.PORT || 5000;
+server.listen(port, ()=> console.log(`\n Running on ${port}\n`))
