@@ -19,7 +19,7 @@
   "homepage": "https://github.com/mattbasile/Sprint-Challenge-RDBMS#readme",
   "dependencies": {
     "express": "^4.16.4",
-    "knex": "^0.16.3",
+    "knex": "^2.4.0",
     "nodemon": "^1.18.10",
     "sqlite3": "^4.0.6"
   }
